@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, useNavigate } from "react-router";
+import {useNavigate } from "react-router";
 export default function Level(){
     const navigate=useNavigate()
 

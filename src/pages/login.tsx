@@ -1,5 +1,5 @@
 import InputNameAndPassword from "../components/inputNameAndPassword"
-import { BrowserRouter, Link, useNavigate } from "react-router";
+import {useNavigate} from "react-router";
 
 export default function Login(){
     const navigate=useNavigate()
