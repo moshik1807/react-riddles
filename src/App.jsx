@@ -1,33 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
+import { BrowserRouter, Routes, Route } from "react-router";
+import Login from './pages/login';
+import Home from './pages/home'
+import Signup from './pages/signup';
+import Level from './pages/level';
+import Game from './pages/game';
+import Result from './pages/result';
+import Admin from './pages/admin';
+import Updeate from './pages/updeateRiddle';
+import Delete from './pages/deleteRiddle';
+import Read from './pages/readRissles';
+import Create from './pages/createRiddle';
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/signup' element={<Signup/>}></Route>
+        <Route path='/level' element={<Level/>}></Route>
+        <Route path='/game' element={<Game/>}></Route>
+        <Route path='/result' element={<Result/>}></Route>
+        <Route path='/admin' element={<Admin/>}></Route>
+        <Route path='/create' element={<Create/>}></Route>
+        <Route path='/delete' element={<Delete/>}></Route>
+        <Route path='/read' element={<Read/>}></Route>
+        <Route path='/updeate' element={<Updeate/>}></Route>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }

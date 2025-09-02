@@ -1,6 +1,8 @@
-export default function X(){
+export default function Result(){
+
     return(
         <>
+        <h1>Result</h1>
         </>
     )
 }
