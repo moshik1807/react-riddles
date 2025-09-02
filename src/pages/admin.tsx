@@ -16,6 +16,12 @@ export default function Admin(){
         <button onClick={()=>{
             navigate("/updeate")
         }}>updeate</button>
+        <button onClick={()=>{
+            navigate("/leaderboard")
+        }}>Leaderboard</button>
+        <button onClick={()=>{
+            navigate("/game")
+        }}>game</button>
         </>
     )
 }

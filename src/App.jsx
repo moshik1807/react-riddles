@@ -11,6 +11,7 @@ import Updeate from './pages/updeateRiddle';
 import Delete from './pages/deleteRiddle';
 import Read from './pages/readRissles';
 import Create from './pages/createRiddle';
+import Leaderboard from './pages/leaderboard';
 function App() {
 
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/delete' element={<Delete/>}></Route>
         <Route path='/read' element={<Read/>}></Route>
         <Route path='/updeate' element={<Updeate/>}></Route>
+        <Route path='/leaderboard' element={<Leaderboard/>}></Route>
       </Routes>
     </BrowserRouter>
     </>
