@@ -12,7 +12,7 @@ export default function Login(){
             navigate("/admin")
         }}>admin</button>
         <button onClick={()=>{
-            navigate("/game")
+            navigate("/user")
         }}>user</button>
         </>
     )
