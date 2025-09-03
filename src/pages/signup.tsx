@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import { signup } from "../util/permission";
 import { useState } from "react";
 import { jwtDecode } from 'jwt-decode';
+import { insertToken } from "../util/localstorege";
 
 type DecodedToken = {
   role: string;
@@ -16,6 +17,7 @@ export default function Signup() {
     e.preventDefault();
     const token = await signup({ name: userName, password:password });
     if (token) {
+      insertToken(token,"authToken")
       const decoded: DecodedToken = jwtDecode(token);
       if (decoded.role === 'user') {
         navigate("/user");

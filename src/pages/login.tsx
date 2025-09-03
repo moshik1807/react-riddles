@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import { login } from "../util/permission";
 import { useState } from "react";
 import { jwtDecode } from 'jwt-decode';
+import { insertToken } from "../util/localstorege";
 
 type DecodedToken = {
   role: string;
@@ -16,6 +17,7 @@ export default function Login() {
     e.preventDefault();
     const token = await login({ name: userName, password:password });
     if (token) {
+      insertToken(token,"authToken")
       const decoded: DecodedToken = jwtDecode(token);
       if (decoded.role === 'user') {
         navigate("/user");
@@ -45,9 +47,6 @@ export default function Login() {
         />
         <button type="submit">submit</button>
       </form>
-
-      <button onClick={() => navigate("/admin")}>admin</button>
-      <button onClick={() => navigate("/user")}>user</button>
     </>
   );
 }
