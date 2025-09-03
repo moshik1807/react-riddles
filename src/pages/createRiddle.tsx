@@ -30,7 +30,7 @@ export default function Create(){
                 formData.forEach((value, key) => {
                     riddle[key] = value;  
                 });
-                fetch('http://localhost:2123/riddle/create', {
+                fetch('https://riddle-project-2.onrender.com/riddle/create', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
