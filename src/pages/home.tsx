@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function Home(){
     const navigate=useNavigate()
-    const[token,setToken]=useState()
+    
     return(
         <>
         <h1>home</h1>
