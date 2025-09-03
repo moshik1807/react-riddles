@@ -27,7 +27,7 @@ export default function updeate(){
                 formData.forEach((value, key) => {
                     riddle[key] = value;  
                 });
-                fetch('http://localhost:2123/riddle/updeate', {
+                fetch('https://riddle-project-2.onrender.com/riddle/updeate', {
                     method: 'PUT',
                     headers: {
                     'Content-Type': 'application/json',
