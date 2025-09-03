@@ -14,7 +14,7 @@ export default function Login() {
 
   async function log(e: React.FormEvent) {
     e.preventDefault();
-    const token = await login({ username: userName, password });
+    const token = await login({ name: userName, password:password });
     if (token) {
       const decoded: DecodedToken = jwtDecode(token);
       if (decoded.role === 'user') {

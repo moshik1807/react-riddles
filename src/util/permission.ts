@@ -1,5 +1,5 @@
 type User = {
-  username: string;
+  name: string;
   password: string;
 };
 
@@ -42,7 +42,7 @@ export async function signup(user: User) {
     }
 
     const data = await response.json();
-    return data; 
+    return data.token; 
   } catch (err) {
     console.error("Error during signup:", err);
     return null;
