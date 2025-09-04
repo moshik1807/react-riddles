@@ -11,9 +11,13 @@ export default function Riddle(props:{riddle:RiddleType,setCount:Function}){
             <h2>{props.riddle.taskDescription}</h2>
             <form action="">
             <input type="text" placeholder="enter" ref={x}/>
-            <button onClick={()=>{
+            <button onClick={(e)=>{
+                e.preventDefault();
                 if(props.riddle.correctAnswer == x.current?.value){
-                    props.setCount((prev:number)=>prev++)
+                    props.setCount((prev:number)=>prev + 1)
+                }
+                else{
+                    alert("wrong")
                 }
             }}>submit</button>
             </form>
