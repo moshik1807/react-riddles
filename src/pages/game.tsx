@@ -15,11 +15,7 @@ export default function Game(){
 
     return(
         <>
-
         <p>{JSON.stringify(riddles, null, 2)}</p>
-
-
-
         <h1>game</h1>
         <p>question:1 + 1</p>
 
