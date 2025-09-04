@@ -10,8 +10,8 @@ export default function Delete(){
             <input  ref={id} type="text" name="id" placeholder="enter id riddle"/>
             <button type="submit" onClick={(e)=>{
                 e.preventDefault();
-                const idRiddle={id:id}
-                fetch('https://riddle-project-2.onrender.com/riddle/updeate', {
+                const idRiddle={id:id.current?.value}
+                fetch('https://riddle-project-2.onrender.com/riddle/delete', {
                     method: 'PUT',
                     headers: {
                     'Content-Type': 'application/json',
