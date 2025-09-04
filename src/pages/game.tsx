@@ -14,10 +14,19 @@ export default function Game(){
         .then((data) => setRiddles(data))
         .catch((err) => console.error("Error fetching riddles:", err));
     }, []);
+
+    function setCountOrNavigate(){
+        return count < riddles.length -1 ? setCount : (_) => {
+            navigate('/result')
+        };
+    }
+
+    
+
     return(
         <>
         <h1>game</h1>
-       {riddles.length && <Riddle riddle={riddles[count]} setCount={setCount}/>} 
+       {riddles.length && <Riddle riddlesLength={riddles.length} riddle={riddles[count]} setCountOrNavigate={setCountOrNavigate}/>} 
         </>
     )
 }
