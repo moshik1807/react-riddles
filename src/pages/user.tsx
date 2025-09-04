@@ -11,7 +11,7 @@ export default function User(){
             navigate("/leaderboard")
         }}>Leaderboard</button>
         <button onClick={()=>{
-            navigate("/game")
+            navigate("/level")
         }}>game</button>
         </>
     )

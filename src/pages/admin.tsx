@@ -20,7 +20,7 @@ export default function Admin(){
             navigate("/leaderboard")
         }}>Leaderboard</button>
         <button onClick={()=>{
-            navigate("/game")
+            navigate("/level")
         }}>game</button>
         </>
     )
