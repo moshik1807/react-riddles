@@ -4,8 +4,11 @@ type RiddleType = {
   taskDescription: string;
   correctAnswer: string;
 };
-export default function Riddle(props:{riddle:RiddleType,setCount:Function}){
+export default function Riddle(props:{riddle:RiddleType,setCountOrNavigate:Function, riddlesLength: number}){
     const x = useRef<HTMLInputElement>(null)
+    const setCount = props.setCountOrNavigate();
+        
+    
     return(
         <>
             <h2>{props.riddle.taskDescription}</h2>
@@ -14,7 +17,7 @@ export default function Riddle(props:{riddle:RiddleType,setCount:Function}){
             <button onClick={(e)=>{
                 e.preventDefault();
                 if(props.riddle.correctAnswer == x.current?.value){
-                    props.setCount((prev:number)=>prev + 1)
+                     setCount(prev => prev +1)
                 }
                 else{
                     alert("wrong")
